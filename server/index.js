@@ -5,6 +5,10 @@ const cors = require("cors")
 const {Server} = require("socket.io")
 
 app.use(cors())
+app.use((req, res, next) => {
+  res.setHeader("Content-Security-Policy", "default-src 'none'; img-src 'self' https://mern-chat-ddv1.vercel.app");
+  next();
+});
 
 const server = http.createServer(app)
 
