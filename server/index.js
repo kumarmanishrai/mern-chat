@@ -4,7 +4,16 @@ const http = require("http")
 const cors = require("cors")
 const {Server} = require("socket.io")
 
-app.use(cors())
+
+
+app.use(cors({
+    origin: ["https://mern-chat-phi.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+
+}))
+
 app.use((req, res, next) => {
   res.setHeader("Content-Security-Policy", `
     default-src 'self' 'unsafe-inline' https://mern-chat-ddv1.vercel.app https://mern-chat-phi.vercel.app;
