@@ -9,10 +9,6 @@ app.use((req, res, next) => {
   res.setHeader("Content-Security-Policy", `
     default-src 'self' 'unsafe-inline' https://mern-chat-ddv1.vercel.app https://mern-chat-phi.vercel.app;
     img-src 'self' data: https://mern-chat-ddv1.vercel.app https://mern-chat-phi.vercel.app;
-    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://mern-chat-ddv1.vercel.app https://mern-chat-phi.vercel.app;
-    style-src 'self' 'unsafe-inline' https://mern-chat-ddv1.vercel.app https://mern-chat-phi.vercel.app;
-    connect-src 'self' https://mern-chat-ddv1.vercel.app https://mern-chat-phi.vercel.app ws://localhost:3000 ws://mern-chat-ddv1.vercel.app ws://mern-chat-phi.vercel.app;
-    frame-src 'self' https://mern-chat-ddv1.vercel.app https://mern-chat-phi.vercel.app;
   `);
   next();
 });
