@@ -4,7 +4,7 @@ import "./App.css";
 import io from "socket.io-client";
 import Chat from "./Chat";
 
-const socket = io.connect("https://mern-chat-ddv1.vercel.app");
+const socket = io.connect("https://mern-chat-vwgh.onrender.com/");
 
 function App() {
   const [username, setUsername] = useState("");
