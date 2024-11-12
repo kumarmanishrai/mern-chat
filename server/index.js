@@ -4,7 +4,7 @@ const http = require("http")
 const cors = require("cors")
 const {Server} = require("socket.io")
 
-
+const port = process.env.PORT || 5000
 
 app.use(cors({
     origin: ["https://mern-chat-phi.vercel.app"],
@@ -50,6 +50,6 @@ io.on("connection", (socket)=> {
 })
 
 
-server.listen(5000, ()=> {
+server.listen(port, ()=> {
     console.log("SERVER IS RUNNING ON PORT 5000");
 })
